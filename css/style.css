@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+body,
+div,
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px
+}
+
+hr {
+    color: white;
+    border: 2px solid #fff;
+}
+
+.clear-fix {
+    overflow: auto;
+}
+
+.gray-text {
+    color: rgba(0, 0, 0, .5)
+}
+
+.gray-bg {
+    background-color: rgba(0, 0, 0, .5)
+}
+
+.education-entry,
+.work-entry,
+.project-entry {
+    margin-bottom: 2em
+}
+
+.education-entry a,
+.work-entry a,
+.project-entry a {
+    display: inline;
+    font-weight: 700
+}
+
+h1 {
+    font-size: 2em;
+    color: #ffffff;
+    display: inline;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #fff;
+    background-color: #000000;
+    margin: 0 -2rem;
+    margin-bottom: 1.5em;
+    padding: .75rem 2rem;
+}
+
+h3 {
+    font-size: 1.25em;
+    color: #000;
+    line-height: 22px;
+    padding-bottom: .75em;
+}
+
+h4 {
+    font-weight: bold;
+    font-size: 1em;
+    color: #4a4a4a;
+    line-height: 24px;
+}
+
+.date-text {
+    color: #999;
+}
+
+.location-text {
+    color: #999;
+    float: right
+}
+
+p {
+    font-size: 14px;
+    color: #333;
+    line-height: 21px;
+}
+
+a {
+    color: #2196F3;
+    text-decoration: none;
+    margin-top: 10px;
+    display: block;
+}
+
+#welcome-message {
+    margin-bottom: 1em
+}
+
+#skills-h3 {
+    color: #ffffff;
+    display: none;
+}
+
+.secondary-color {
+    background-color: #f5ae23;
+}
+
+.primary-text {
+    font-weight: bold;
+    color: #fff;
+}
+
+.pale-text {
+    color: rgba(255, 255, 255, .75);
+}
+
+.pull-right {
+    float: right;
+}
+
+.skill {
+    padding: .5em;
+    color: #ffffff;
+    margin-right: 1em;
+    margin-bottom: 1em;
+    display: inline-block;
+}
+
+.skill-label {
+    display: block;
+    margin-bottom: 1em;
+}
+
+.gray {
+    background-color: #f3f3f3;
+    padding-bottom: 10px;
+    clear: both;
+}
+
+.tertiary-color {
+    background-color: #2196F3;
+    background-image: linear-gradient(145deg, #00BCD4 0%, #2196F3 100%);
+}
+
+.colorful-bg {
+    background-color: #2196F3;
+    background-image: linear-gradient(145deg, #00BCD4 0%, #2196F3 100%);
+}
+
+header {
+    color: #fff;
+    padding: 2rem 0;
+}
+
+header a {
+    color: #fff;
+    display: inline;
+}
+
+header a:hover {
+    text-decoration: underline
+}
+
+footer a {
+    color: #fff;
+    display: inline;
+}
+
+footer a:hover {
+    text-decoration: underline
+}
+
+#role {
+    text-transform: uppercase;
+}
+
+#topContacts {
+    justify-content: space-between;
+    padding: 0;
+    margin-bottom: 2em;
+}
+
+#footerContacts {
+    justify-content: space-around;
+    padding: 10px 0;
+    margin-top: 2em;
+}
+
+ul.description {
+    list-style-type: square;
+    padding-left: 2em;
+    margin-top: 1em;
+}
+
+.flex-box {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 10px;
+}
+
+.center-content {
+    padding: 2.5% 5%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.biopic {
+    width: 100%;
+    border-radius: 50%;
+}
+
+footer {
+    text-align: center;
+}
+
+#map {
+    display: block;
+    height: 400px;
+}
+
+#mapDiv {
+    width: 100%;
+}
+
+
+/* Media queries to handle various device widths */
+
+@media only screen and (max-width: 1024px) {
+    #lets-connect {
+        margin-top: 5%;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    #lets-connect {
+        margin-top: 10%;
+    }
+}
+
+@media only screen and (min-width: 750px) {
+    #skills-h3,
+    .biopic {
+        display: block;
+    }
+}

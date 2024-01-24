@@ -1,6 +1,5 @@
 // Bio section content
-
-var bio = {
+const bio = {
     "name": "Hank Daugherty",
     "role": "Front-end Developer",
     "contacts": {
@@ -16,8 +15,7 @@ var bio = {
 };
 
 // Work section content
-
-var work = {
+const work = {
     "jobs": [{
         "title": "Manager, Digital Marketing",
         "employer": "Alliance for Telecommunications Industry Solutions",
@@ -58,8 +56,7 @@ var work = {
 };
 
 // Education section content
-
-var education = {
+const education = {
     "schools": [{
         "name": "Washington and Lee University",
         "datesAttended": "2004 - 2007",
@@ -98,95 +95,93 @@ var education = {
 };
 
 // Function to display bio and skills section
-
-function displayBio() {
-    var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
-    var formattedWelcome = HTMLwelcomeMsg.replace("%data%", bio.welcome);
-    $("#headline").prepend(HTMLheaderName.replace("%data%", bio.name) + HTMLheaderRole.replace("%data%", bio.role));
+const displayBio = () => {
+    const formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+    const formattedWelcome = HTMLwelcomeMsg.replace("%data%", bio.welcome);
+    $("#headline").prepend(`${HTMLheaderName.replace("%data%", bio.name)}${HTMLheaderRole.replace("%data%", bio.role)}`);
+    
     // Contact Info
-    var formattedContactInfo = [];
     $(HTMLemail.replace("%data%", bio.contacts.email)).appendTo("#topContacts, #footerContacts");
-    $(HTMLlinkedin.replace(/%data%/g, bio.contacts.linkedin)).appendTo("#topContacts, #footerContacts");
-    $(HTMLgithub.replace(/%data%/g, bio.contacts.github)).appendTo("#topContacts, #footerContacts");
+    $(HTMLlinkedin.replace("%data%", bio.contacts.linkedin)).appendTo("#topContacts, #footerContacts");
+    $(HTMLgithub.replace("%data%", bio.contacts.github)).appendTo("#topContacts, #footerContacts");
     $(HTMLlocation.replace("%data%", bio.contacts.location)).appendTo("#topContacts, #footerContacts");
+
     $("#bio").append(formattedBioPic);
     $("#bio").append(HTMLbioText);
     $("#bio-text").append(formattedWelcome);
+
     if (bio.skills.length > 0) {
         $("#bio-text").append(HTMLskillsList);
-        bio.skills.forEach(function (skill) {
+        bio.skills.forEach(skill => {
             $("#skills").append(HTMLskills.replace("%data%", skill));
-        })
+        });
     }
 };
 
 // Function to display work section
-
-function displayWork() {
+const displayWork = () => {
     if (work.jobs.length > 0) {
-        work.jobs.forEach(function (job) {
+        work.jobs.forEach(job => {
             $("#workExperience").append(HTMLworkStart);
-            var formattedEmployer = HTMLworkEmployer.replace("%data%", job.employer).replace("#", "http://" + job.url);
-            var formattedWorkTitle = HTMLworkTitle.replace("%data%", job.title);
-            var formattedWorkLocation = HTMLworkLocation.replace("%data%", job.location);
-            var formattedDatesWorked = HTMLworkDates.replace("%data%", job.dates);
-            if (formattedEmployer.includes("undefined")) {
-                formattedEmployer = "";
-            }
-            if (formattedWorkLocation.includes("undefined")) {
-                formattedWorkLocation = "";
-            }
-            $(".work-entry:last").append(formattedEmployer + formattedWorkLocation);
-            $(".work-entry:last").append(formattedWorkTitle);
+
+            const formattedEmployer = HTMLworkEmployer.replace("%data%", job.employer).replace("#", `http://${job.url}`);
+            const formattedWorkTitle = HTMLworkTitle.replace("%data%", job.title);
+            const formattedWorkLocation = HTMLworkLocation.replace("%data%", job.location);
+            const formattedDatesWorked = HTMLworkDates.replace("%data%", job.dates);
+
+            $(".work-entry:last").append(`${formattedEmployer}${formattedWorkTitle}`);
             $(".work-entry:last").append(formattedDatesWorked);
+            $(".work-entry:last").append(formattedWorkLocation);
+
             if (job.description.length > 0) {
                 $(".work-entry:last").append(HTMLworkDescriptionList);
-                job.description.forEach(function (description) {
+                job.description.forEach(description => {
                     $(".description:last").append(HTMLworkDescription.replace("%data%", description));
-                })
+                });
             }
-        })
+        });
     }
 };
 
 // Function to display education section
-
-function displayEducation() {
+const displayEducation = () => {
     if (education.schools.length > 0) {
-        education.schools.forEach(function (program) {
+        education.schools.forEach(program => {
             $("#education").append(HTMLschoolStart);
-            var formattedSchoolName = HTMLschoolName.replace("%data%", program.name).replace("#", "http://" + program.url);
-            var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", program.degree);
-            var formattedSchoolDates = HTMLschoolDates.replace("%data%", program.datesAttended);
-            var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", program.location);
-            var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", program.major);
-            // var formattedSchoolMinor = HTMLschoolMinor.replace("%data%", program.minor);
-            $(".education-entry:last").append(formattedSchoolName + formattedSchoolLocation);
-            $(".education-entry:last").append(formattedSchoolDegree);
-            if (formattedSchoolMajor === "undefined") {
-                formattedSchoolMajor = "";
-            } else {
-                $(".education-entry:last").append(", " + formattedSchoolMajor);
-            }
+
+            const formattedSchoolName = HTMLschoolName.replace("%data%", program.name).replace("#", `http://${program.url}`);
+            const formattedSchoolDegree = HTMLschoolDegree.replace("%data%", program.degree);
+            const formattedSchoolDates = HTMLschoolDates.replace("%data%", program.datesAttended);
+            const formattedSchoolLocation = HTMLschoolLocation.replace("%data%", program.location);
+            const formattedSchoolMajor = program.major ? HTMLschoolMajor.replace("%data%", program.major) : '';
+
+            $(".education-entry:last").append(`${formattedSchoolName}${formattedSchoolDegree}`);
             $(".education-entry:last").append(formattedSchoolDates);
-        })
+            $(".education-entry:last").append(formattedSchoolLocation);
+            if (formattedSchoolMajor) {
+                $(".education-entry:last").append(formattedSchoolMajor);
+            }
+        });
     }
+
     if (education.onlineCourses.length > 0) {
         $("#education").append(HTMLonlineClasses);
-        education.onlineCourses.forEach(function (course) {
+        education.onlineCourses.forEach(course => {
             $("#education").append(HTMLschoolStart);
-            var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", course.title).replace("#", course.url);
-            var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", course.school);
-            var formattedOnlineDates = HTMLonlineDates.replace("%data%", course.completed);
-            var formattedOnlineURL = HTMLonlineURL.replace("%data%", course.url).replace("#", course.url);
-            $(".education-entry:last").append(formattedOnlineTitle + formattedOnlineSchool);
+
+            const formattedOnlineTitle = HTMLonlineTitle.replace("%data%", course.title).replace("#", course.url);
+            const formattedOnlineSchool = HTMLonlineSchool.replace("%data%", course.school);
+            const formattedOnlineDates = HTMLonlineDates.replace("%data%", course.completed);
+            const formattedOnlineURL = HTMLonlineURL.replace("%data%", course.url).replace("#", course.url);
+
+            $(".education-entry:last").append(`${formattedOnlineTitle}${formattedOnlineSchool}`);
             $(".education-entry:last").append(formattedOnlineDates);
-            // $(".education-entry:last").append(formattedOnlineURL);
-        })
+            // $(".education-entry:last").append(formattedOnlineURL); // Uncomment if needed
+        });
     }
 };
 
-// Add content to resume
+// Execute functions to add content to resume
 displayBio();
 displayWork();
 displayEducation();

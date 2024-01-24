@@ -1,114 +1,84 @@
-/*
-Define HTML string variables.
-*/
-var HTMLheaderName = '<h1 id="name">%data%</h1>';
-var HTMLheaderRole = '<span id="role" class="primary-text"> %data%</span><hr>';
+// Define HTML string variables using const
+const HTMLheaderName = '<h1 id="name">%data%</h1>';
+const HTMLheaderRole = '<span id="role" class="primary-text"> %data%</span><hr>';
+const HTMLcontactGeneric = '<li class="flex-item"><span class="pale-text">%contact%</span><span class="primary-text">%data%</span></li>';
+const HTMLmobile = '<li class="flex-item"><span class="pale-text">mobile</span><span class="primary-text"> %data%</span></li>';
+const HTMLemail = '<li class="flex-item"><span class="pale-text">email</span><span class="primary-text"> %data%</span></li>';
+const HTMLtwitter = '<li class="flex-item"><span class="pale-text">twitter</span><span class="primary-text"> %data%</span></li>';
+const HTMLgithub = '<li class="flex-item"><span class="pale-text">github</span><span class="primary-text"> <a href="https://github.com/%data%" target="_blank">%data%</a></span></li>';
+const HTMLlinkedin = '<li class="flex-item"><span class="pale-text">linkedin</span><span class="primary-text"><a href="https://www.linkedin.com/in/%data%" target="_blank">%data%</a></span></li>';
+const HTMLblog = '<li class="flex-item"><span class="pale-text">blog </span><span class="primary-text">%data%</span></li>';
+const HTMLlocation = '<li class="flex-item"><span class="pale-text">location </span><span class="primary-text">%data%</span></li>';
 
-var HTMLcontactGeneric = '<li class="flex-item"><span class="pale-text">%contact%</span><span class="primary-text">%data%</span></li>';
-var HTMLmobile = '<li class="flex-item"><span class="pale-text">mobile</span><span class="primary-text"> %data%</span></li>';
-var HTMLemail = '<li class="flex-item"><span class="pale-text">email</span><span class="primary-text"> %data%</span></li>';
-var HTMLtwitter = '<li class="flex-item"><span class="pale-text">twitter</span><span class="primary-text"> %data%</span></li>';
-var HTMLgithub = '<li class="flex-item"><span class="pale-text">github</span><span class="primary-text"> <a href="https://github.com/%data%" target="_blank">%data%</a></span></li>';
-var HTMLlinkedin = '<li class="flex-item"><span class="pale-text">linkedin</span><span class="primary-text"><a href="https://www.linkedin.com/in/%data%" target="_blank">%data%</a></span></li>';
-var HTMLblog = '<li class="flex-item"><span class="pale-text">blog </span><span class="primary-text">%data%</span></li>';
-var HTMLlocation = '<li class="flex-item"><span class="pale-text">location </span><span class="primary-text">%data%</span></li>';
+const HTMLbioPic = '<div class="col-sm-3 col-md-2"><img src="%data%" class="biopic invisible-sm visible-md"></div>';
+const HTMLbioText = '<div id="bio-text" class="col-xs-12 col-sm-9 col-md-10"></div>';
+const HTMLwelcomeMsg = '<div id="welcome-message">%data%</div>';
 
-var HTMLbioPic = '<div class="col-sm-3 col-md-2"><img src="%data%" class="biopic invisible-sm visible-md"></div>';
-var HTMLbioText = '<div id="bio-text" class="col-xs-12 col-sm-9 col-md-10"></div>';
-var HTMLwelcomeMsg = '<div id="welcome-message">%data%</div>';
+const HTMLskillsList = '<div id="skills"><span class="pale-text skill-label">Technical Skills: </span>';
+const HTMLskills = '<span class="skill gray-bg">%data%</span></div>';
 
-var HTMLskillsList = '<div id="skills"><span class="pale-text skill-label">Technical Skills: </span>';
-var HTMLskills = '<span class="skill gray-bg">%data%</span></div>';
+const HTMLworkStart = '<div class="work-entry"></div>';
+const HTMLworkEmployer = '<div><a href="#" target="_blank">%data%</a>';
+const HTMLworkTitle = '<span class="position">%data%</span></div>';
+const HTMLworkDates = '<div class="gray-text">%data%</div>';
+const HTMLworkLocation = '<span class="pull-right gray-text">%data%</span>';
+const HTMLworkDescriptionList = '<ul class="description"></ul>';
+const HTMLworkDescription = '<li>%data%</li>';
 
-var HTMLworkStart = '<div class="work-entry"></div>';
-var HTMLworkEmployer = '<div><a href="#" target="_blank">%data%</a>';
-var HTMLworkTitle = '<span class="position">%data%</span></div>';
-var HTMLworkDates = '<div class="gray-text">%data%</div>';
-var HTMLworkLocation = '<span class="pull-right gray-text">%data%</span>';
-var HTMLworkDescriptionList = '<ul class="description"></ul>';
-var HTMLworkDescription = '<li>%data%</li>';
+const HTMLprojectStart = '<div class="project-entry"></div>';
+const HTMLprojectTitle = '<a href="#">%data%</a>';
+const HTMLprojectDates = '<div class="date-text">%data%</div>';
+const HTMLprojectDescription = '<p><br>%data%</p>';
+const HTMLprojectImage = '<img src="%data%">';
 
-var HTMLprojectStart = '<div class="project-entry"></div>';
-var HTMLprojectTitle = '<a href="#">%data%</a>';
-var HTMLprojectDates = '<div class="date-text">%data%</div>';
-var HTMLprojectDescription = '<p><br>%data%</p>';
-var HTMLprojectImage = '<img src="%data%">';
+const HTMLschoolStart = '<div class="education-entry"></div>';
+const HTMLschoolName = '<div><a href="#" target="_blank">%data%</a>';
+const HTMLschoolDegree = '<span class="position">%data%</span></div>';
+const HTMLschoolDates = '<div class="gray-text">%data%</div>';
+const HTMLschoolLocation = '<div class="pull-right gray-text">%data%</div></div>';
+const HTMLschoolMajor = '%data%';
 
-var HTMLschoolStart = '<div class="education-entry"></div>';
-var HTMLschoolName = '<div><a href="#" target="_blank">%data%</a>';
-var HTMLschoolDegree = '<span class="position">%data%</span></div>';
-var HTMLschoolDates = '<div class="gray-text">%data%</div>';
-var HTMLschoolLocation = '<div class="pull-right gray-text">%data%</div></div>';
-var HTMLschoolMajor = '%data%';
+const HTMLonlineClasses = '<h3>Online Courses</h3>';
+const HTMLonlineTitle = '<div><a href="#" target="_blank">%data%</a>';
+const HTMLonlineSchool = '<div class="pull-right gray-text">%data%</div></div>';
+const HTMLonlineDates = '<div class="gray-text">%data%</div>';
+const HTMLonlineURL = '<br><a href="#">%data%</a>';
 
-var HTMLonlineClasses = '<h3>Online Courses</h3>';
-var HTMLonlineTitle = '<div><a href="#" target="_blank">%data%</a>';
-var HTMLonlineSchool = '<div class="pull-right gray-text">%data%</div></div>';
-var HTMLonlineDates = '<div class="gray-text">%data%</div>';
-var HTMLonlineURL = '<br><a href="#">%data%</a>';
+const internationalizeButton = '<button>Internationalize</button>';
+const googleMap = '<div id="map"></div>';
 
-var internationalizeButton = '<button>Internationalize</button>';
-var googleMap = '<div id="map"></div>';
-
-var internationalizeButton = "<button>Internationalize</button>";
-var googleMap = "<div id='map'></div>";
-
-
-/*
-The International Name challenge in Lesson 2 where you'll create a function that will need this helper code to run. Don't delete! It hooks up your code to the button you'll be appending.
-*/
+// Ready function for internationalization button
 $(document).ready(function () {
     $('button').click(function () {
-        var iName = inName() || function () {};
+        const iName = inName() || function () {};
         $('#name').html(iName);
     });
-})
+});
 
-
-
-/*
-The next few lines about clicks are for the Collecting Click Locations quiz in Lesson 2.
-*/
-clickLocations = [];
+// Array for click locations
+let clickLocations = [];
 
 function logClicks(x, y) {
-    clickLocations.push({
-        "x": x,
-        "y": y
-    });
-    console.log("x location: " + x + "; y location: " + y);
+    clickLocations.push({ x, y });
+    console.log(`x location: ${x}; y location: ${y}`);
 }
 
 $(document).click(function (loc) {
     logClicks(loc.pageX, loc.pageY);
 });
 
+// Declare map variable
+let map;
 
-
-/*
-This is the fun part. Here's where we generate the custom Google Map for the website.
-See the documentation below for more details.
-https://developers.google.com/maps/documentation/javascript/reference
-*/
-var map; // declares a global map variable
-
-
-/*
-Start here! initializeMap() is called when page is loaded.
-*/
 function initializeMap() {
+    let locations;
 
-    var locations;
-
-    var mapOptions = {
+    const mapOptions = {
         scrollwheel: false,
         disableDefaultUI: true
     };
 
-    // This next line makes `map` a new Google Map JavaScript Object and attaches it to
-    // <div id="map">, which is appended as part of an exercise late in the course.
     map = new google.maps.Map(document.querySelector('#map'), mapOptions);
-
 
     /*
     locationFinder() returns an array of every location string from the JSONs
@@ -217,27 +187,14 @@ function initializeMap() {
     }
 
     // Sets the boundaries of the map based on pin locations
+
     window.mapBounds = new google.maps.LatLngBounds();
 
-    // locations is an array of location strings returned from locationFinder()
     locations = locationFinder();
-
-    // pinPoster(locations) creates pins on the map for each location in
-    // the locations array
     pinPoster(locations);
+}
 
-};
-
-/*
-Uncomment all the code below when you're ready to implement a Google Map!
-*/
-
-// Calls the initializeMap() function when the page loads
 window.addEventListener('load', initializeMap);
-
-// Vanilla JS way to listen for resizing of the window 
-// and adjust map bounds
-window.addEventListener('resize', function (e) {
-    // Make sure the map bounds get updated on page resize
+window.addEventListener('resize', function () {
     map.fitBounds(mapBounds);
 });

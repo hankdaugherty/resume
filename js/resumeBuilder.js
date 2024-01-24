@@ -131,7 +131,8 @@ const displayWork = () => {
             const formattedWorkLocation = HTMLworkLocation.replace("%data%", job.location);
             const formattedDatesWorked = HTMLworkDates.replace("%data%", job.dates);
 
-            $(".work-entry:last").append(`${formattedEmployer}${formattedWorkTitle}`);
+            // Append employer and title with a "|" symbol between them
+            $(".work-entry:last").append(`${formattedEmployer} | ${formattedWorkTitle}`);
             $(".work-entry:last").append(formattedDatesWorked);
             $(".work-entry:last").append(formattedWorkLocation);
 
@@ -144,6 +145,7 @@ const displayWork = () => {
         });
     }
 };
+
 
 // Function to display education section
 const displayEducation = () => {

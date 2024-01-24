@@ -4,19 +4,26 @@ const bio = {
     "role": "Front-end Developer",
     "contacts": {
         "mobile": "302-584-6296",
-        "email": "contact@hankdaugherty.com",
+        "email": "hello@hankdaugherty.com",
         "linkedin": "hankdaugherty",
         "github": "hankdaugherty",
         "location": "Washington, DC"
     },
-    "welcome": "Innovative marketing professional with 5+ years of experience designing and leading successful campaigns in the non-profit/association sector. Specialties include front end development, digital and print design and inbound marketing.",
+    "welcome": "Senior Manager with over 10 years of experience in web development, IT operations, and digital marketing. Specialized in using WordPress, Amazon Web Services (AWS), and front-end technologies to develop and optimize web infrastructure, ensuring user-friendly and efficient web solutions. Proficient in collaborating with diverse teams to manage large-scale web projects, with a keen focus on streamlining processes, reducing costs, and enhancing efficiency. Demonstrated expertise in digital marketing and SEO, coupled with a strong ability in multimedia design using Adobe Creative Suite. Proficient in HTML, CSS, JavaScript, jQuery, PHP, and MySQL, committed to delivering high-quality work and driving continuous improvement in dynamic web environments.",
     "skills": ["HTML", "CSS", "Javascript", "jQuery", "Bootstrap", "Wordpress", "Adobe Creative Cloud"],
-    "bioPic": "images/hd.png"
+    "bioPic": "images/hank.jpg"
 };
 
 // Work section content
 const work = {
     "jobs": [{
+        "title": "Senior Manager, Web and IT",
+        "employer": "Alliance for Telecommunications Industry Solutions",
+        "dates": "March 2018 - Present",
+        "location": "Washington, DC",
+        "url": "www.atis.org",
+        "description": ["Modernized the company's web infrastructure by implementing Amazon Web Services (AWS) to host company websites on EC2 instances, maintain DNS through Route 53, and store files on S3, ensuring maximum performance and security while reducing annual hosting expenses by 90%.", "Led the transition of our company's website from an ASP Classic platform to a WordPress environment, involving decision-making on site structure, theme selection, and custom plugin integration. Worked closely with external vendors to ensure seamless data migration and retention of crucial site features. The upgraded site delivered enhanced user experience, streamlined content management, and incorporated responsive design principles for optimal viewing across devices. This project not only improved the company's online presence but also reduced overall site maintenance time and costs.", "Developed and managed the complete project life cycle for the implementation of new database and filing systems on part68.org and imsiadmin.com, resources of significance in the telecommunications industry. Built on an AWS EC2 hosted WordPress platform, each project featured a custom-designed theme and specially developed PHP plugins. These systems facilitated secure and efficient submission, payment (integrated via Stripe), and public searching of entries. To enhance user experience, branching forms were implemented to guide users through the complex filing process. The new systems not only heighten system performance and improved user experience, but also cut operational costs significantly.", "Continuously sought opportunities to improve the company's web infrastructure and digital processes, leading to significant enhancements like the implementation of Microsoft Teams for remote collaboration, and the migration of the company's file system to Microsoft SharePoint.", "Concurrently managed multiple tech-related projects, including the upgrade of the company's phone system from landline to VOIP."]
+	}, {
         "title": "Manager, Digital Marketing",
         "employer": "Alliance for Telecommunications Industry Solutions",
         "dates": "Feb. 2016 - Present",
@@ -76,11 +83,6 @@ const education = {
         "title": "Object-Oriented Javascript",
         "completed": "March 2016",
         "url": "https://www.udacity.com/course/object-oriented-javascript--ud015"
-	}, {
-        "school": "Udacity",
-        "title": "Intro to jQuery",
-        "completed": "February 2016",
-        "url": "https://www.udacity.com/course/intro-to-jquery--ud245"
 	}, {
         "school": "Udacity",
         "title": "Javascript Basics",
